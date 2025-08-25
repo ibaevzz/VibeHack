@@ -1,12 +1,13 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.compose.compiler)
     alias(libs.plugins.ksp)
 }
 
 android {
     namespace = "ru.ibaevzz.vibehack"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "ru.ibaevzz.vibehack"
@@ -35,14 +36,14 @@ android {
         targetCompatibility = JavaVersion.VERSION_11
     }
 
+    @Suppress("DEPRECATION")
     kotlinOptions {
-        @Suppress("DEPRECATION")
         jvmTarget = "11"
     }
 }
 
 dependencies {
-    //Android core
+    //Android
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -59,6 +60,7 @@ dependencies {
     //AndroidX Activity & ViewModel
     implementation(libs.activity.compose)
     implementation(libs.lifecycle.viewmodel.compose)
+    implementation(libs.fragment.ktx)
 
     //Kotlin Coroutines
     implementation(libs.kotlinx.coroutines.android)
@@ -74,13 +76,10 @@ dependencies {
 
     //Networking
     implementation(libs.retrofit)
-    implementation(libs.retrofit.mock)
-    implementation(libs.okhttp)
     implementation(libs.gson)
+    implementation(libs.okhttp)
+    implementation(libs.okhttp.logging)
 
     //Navigation
     implementation(libs.cicerone)
-
-    //Kotlin Utilities
-    implementation(libs.kotlin.result)
 }
