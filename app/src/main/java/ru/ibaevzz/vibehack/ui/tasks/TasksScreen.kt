@@ -31,6 +31,7 @@ import ru.ibaevzz.vibehack.domain.model.Task
 
 @Composable
 fun TasksScreen(
+    isWard: Boolean,
     name: String,
     tasks: List<Task>
 ) {
@@ -51,21 +52,23 @@ fun TasksScreen(
                     fontWeight = FontWeight.Bold
                 )
             )
-            Box(
-                modifier = Modifier
-                    .height(26.dp)
-                    .clip(RoundedCornerShape(2.dp))
-                    .background(Color(0xFF0E7F3B))
-                    .padding(horizontal = 6.dp)
-            ) {
-                Text(
-                    "Связаться с куратором",
-                    modifier = Modifier.align(Alignment.Center),
-                    style = TextStyle.Default.copy(
-                        color = Color(0xFFFFFFFF),
-                        fontSize = 14.sp,
+            if (!isWard) {
+                Box(
+                    modifier = Modifier
+                        .height(26.dp)
+                        .clip(RoundedCornerShape(2.dp))
+                        .background(Color(0xFF0E7F3B))
+                        .padding(horizontal = 6.dp)
+                ) {
+                    Text(
+                        "Связаться с куратором",
+                        modifier = Modifier.align(Alignment.Center),
+                        style = TextStyle.Default.copy(
+                            color = Color(0xFFFFFFFF),
+                            fontSize = 14.sp,
+                        )
                     )
-                )
+                }
             }
         }
         Spacer(Modifier.height(14.dp))

@@ -59,7 +59,7 @@ fun WardCard(
                 onClick(ward.id)
             }
             .fillMaxWidth()
-            .padding(12.dp),
+            .padding(vertical = 12.dp),
         shape = RoundedCornerShape(12.dp),
         elevation = CardDefaults.cardElevation(defaultElevation = 6.dp)
     ) {

@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -18,7 +17,6 @@ import androidx.fragment.app.viewModels
 import com.github.terrakok.cicerone.Router
 import ru.ibaevzz.vibehack.App
 import ru.ibaevzz.vibehack.ui.ViewModelFactory
-import ru.ibaevzz.vibehack.ui.check.CheckCodeFragment
 import javax.inject.Inject
 import kotlin.getValue
 

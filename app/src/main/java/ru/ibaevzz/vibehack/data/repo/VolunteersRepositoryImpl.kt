@@ -19,47 +19,65 @@ class VolunteersRepositoryImpl @Inject constructor(): VolunteersRepository {
     }
 
     override suspend fun getTasks(): Result<List<Task>> {
-        TODO("Not yet implemented")
+        return Result.success(mockTasks)
     }
 
     override suspend fun getWards(): Result<List<Ward>> {
         return Result.success(mockWards)
     }
 
+    private val mockTasks = listOf(
+        Task(
+            name = "Обновить профессиональные навыки",
+            inProgress = false,
+            description = null
+        ),
+        Task(
+            name = "Получить необходимые сертификаты",
+            inProgress = false,
+            description = null
+        ),
+        Task(
+            name = "Восстановить физическую форму",
+            inProgress = true,
+            description = "Хорошо"
+        )
+    )
+
     private val mockVolunteers = listOf(
         Volunteer(
             id = 0,
             name = "Магомед Шариев",
             location = "Москва, Россия",
-            skills = listOf("123444", "eropfoperf", "erkvmeokr", "rofjieoirf"),
+            skills = listOf("Обслуживание клиентов", "Продажи", "Розничная торговля"),
             status = VolunteerRequestStatus.Rejected,
         ),
         Volunteer(
             id = 0,
             name = "Магомед Шариев",
             location = "Москва, Россия",
-            skills = listOf("123444", "eropfoperf", "erkvmeokr", "rofjieoirf"),
+            skills = listOf("Обслуживание клиентов", "Продажи", "Розничная торговля"),
             status = VolunteerRequestStatus.Approved,
         ),
         Volunteer(
             id = 0,
             name = "Магомед Шариев",
             location = "Москва, Россия",
-            skills = listOf("123444", "eropfoperf", "erkvmeokr", "rofjieoirf"),
+            skills = listOf("Обслуживание клиентов", "Продажи", "Розничная торговля"),
             status = VolunteerRequestStatus.Approved,
         ),
         Volunteer(
             id = 0,
             name = "Магомед Шариев",
             location = "Москва, Россия",
-            skills = listOf("123444", "eropfoperf", "erkvmeokr", "rofjieoirf"),
+            skills = listOf("Обслуживание клиентов", "Продажи", "Розничная торговля"),
             status = VolunteerRequestStatus.Rejected,
         ),
         Volunteer(
             id = 0,
             name = "Магомед Шариев",
             location = "Москва, Россия",
-            skills = listOf("123444", "eropfoperf", "erkvmeokr", "rofjieoirf"),
+            skills = listOf("Обслуживание клиентов", "Продажи", "Розничная торговля"),
             status = VolunteerRequestStatus.Rejected,
         )
     )
@@ -71,8 +89,8 @@ class VolunteersRepositoryImpl @Inject constructor(): VolunteersRepository {
             location = "Москва, Россия",
             phoneNumber = "+79289851280",
             careerGoals = "Я хочу найти стабильную работу в розничной торговле",
-            skills = listOf("123444", "eropfoperf", "erkvmeokr", "rofjieoirf"),
-            works = listOf("pewofjcjeopr", "3iefjoier")
+            skills = listOf("Обслуживание клиентов", "Продажи", "Розничная торговля"),
+            works = listOf("Продавец-консультант", "Специалист по работе с клиентами")
         ),
         Ward(
             id = 0,
@@ -80,8 +98,8 @@ class VolunteersRepositoryImpl @Inject constructor(): VolunteersRepository {
             location = "Москва, Россия",
             phoneNumber = "+79289851280",
             careerGoals = "Я хочу найти стабильную работу в розничной торговле",
-            skills = listOf("123444", "eropfoperf", "erkvmeokr", "rofjieoirf"),
-            works = listOf("pewofjcjeopr", "3iefjoier")
+            skills = listOf("Обслуживание клиентов", "Продажи", "Розничная торговля"),
+            works = listOf("Продавец-консультант", "Специалист по работе с клиентами")
         ),
         Ward(
             id = 0,
@@ -89,8 +107,8 @@ class VolunteersRepositoryImpl @Inject constructor(): VolunteersRepository {
             location = "Москва, Россия",
             phoneNumber = "+79289851280",
             careerGoals = "Я хочу найти стабильную работу в розничной торговле",
-            skills = listOf("123444", "eropfoperf", "erkvmeokr", "rofjieoirf"),
-            works = listOf("pewofjcjeopr", "3iefjoier")
+            skills = listOf("Обслуживание клиентов", "Продажи", "Розничная торговля"),
+            works = listOf("Продавец-консультант", "Специалист по работе с клиентами")
         ),
         Ward(
             id = 0,
@@ -98,8 +116,8 @@ class VolunteersRepositoryImpl @Inject constructor(): VolunteersRepository {
             location = "Москва, Россия",
             phoneNumber = "+79289851280",
             careerGoals = "Я хочу найти стабильную работу в розничной торговле",
-            skills = listOf("123444", "eropfoperf", "erkvmeokr", "rofjieoirf"),
-            works = listOf("pewofjcjeopr", "3iefjoier")
+            skills = listOf("Обслуживание клиентов", "Продажи", "Розничная торговля"),
+            works = listOf("Продавец-консультант", "Специалист по работе с клиентами")
         ),
         Ward(
             id = 0,
@@ -107,8 +125,8 @@ class VolunteersRepositoryImpl @Inject constructor(): VolunteersRepository {
             location = "Москва, Россия",
             phoneNumber = "+79289851280",
             careerGoals = "Я хочу найти стабильную работу в розничной торговле",
-            skills = listOf("123444", "eropfoperf", "erkvmeokr", "rofjieoirf"),
-            works = listOf("pewofjcjeopr", "3iefjoier")
+            skills = listOf("Обслуживание клиентов", "Продажи", "Розничная торговля"),
+            works = listOf("Продавец-консультант", "Специалист по работе с клиентами")
         ),
         Ward(
             id = 0,
@@ -116,8 +134,8 @@ class VolunteersRepositoryImpl @Inject constructor(): VolunteersRepository {
             location = "Москва, Россия",
             phoneNumber = "+79289851280",
             careerGoals = "Я хочу найти стабильную работу в розничной торговле",
-            skills = listOf("123444", "eropfoperf", "erkvmeokr", "rofjieoirf"),
-            works = listOf("pewofjcjeopr", "3iefjoier")
+            skills = listOf("Обслуживание клиентов", "Продажи", "Розничная торговля"),
+            works = listOf("Продавец-консультант", "Специалист по работе с клиентами")
         ),
         Ward(
             id = 0,
@@ -125,8 +143,8 @@ class VolunteersRepositoryImpl @Inject constructor(): VolunteersRepository {
             location = "Москва, Россия",
             phoneNumber = "+79289851280",
             careerGoals = "Я хочу найти стабильную работу в розничной торговле",
-            skills = listOf("123444", "eropfoperf", "erkvmeokr", "rofjieoirf"),
-            works = listOf("pewofjcjeopr", "3iefjoier")
+            skills = listOf("Обслуживание клиентов", "Продажи", "Розничная торговля"),
+            works = listOf("Продавец-консультант", "Специалист по работе с клиентами")
         ),
         Ward(
             id = 0,
@@ -134,8 +152,8 @@ class VolunteersRepositoryImpl @Inject constructor(): VolunteersRepository {
             location = "Москва, Россия",
             phoneNumber = "+79289851280",
             careerGoals = "Я хочу найти стабильную работу в розничной торговле",
-            skills = listOf("123444", "eropfoperf", "erkvmeokr", "rofjieoirf"),
-            works = listOf("pewofjcjeopr", "3iefjoier")
+            skills = listOf("Обслуживание клиентов", "Продажи", "Розничная торговля"),
+            works = listOf("Продавец-консультант", "Специалист по работе с клиентами")
         ),
 
     )

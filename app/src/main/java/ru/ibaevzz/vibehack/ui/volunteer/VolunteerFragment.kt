@@ -6,12 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.systemBarsPadding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -61,10 +64,12 @@ class VolunteerFragment: Fragment() {
                             LazyColumn {
                                 item {
                                     Spacer(Modifier.systemBarsPadding())
-                                    Row {
+                                    Row(
+                                        modifier = Modifier.fillMaxWidth(),
+                                        horizontalArrangement = Arrangement.SpaceAround
+                                    ) {
                                         Box(
                                             modifier = Modifier
-                                                .padding(horizontal = 9.dp, vertical = 6.dp)
                                                 .clip(RoundedCornerShape(4.dp))
                                                 .background(Color(0xFFD9D9D9))
                                                 .clickable(
@@ -73,6 +78,7 @@ class VolunteerFragment: Fragment() {
                                                 ) {
                                                     router.replaceScreen(Screens.WardsFragment())
                                                 }
+                                                .padding(horizontal = 9.dp, vertical = 6.dp)
                                         ) {
                                             Text(
                                                 modifier = Modifier.align(Alignment.Center),
@@ -82,9 +88,9 @@ class VolunteerFragment: Fragment() {
                                         }
                                         Box(
                                             modifier = Modifier
-                                                .padding(horizontal = 9.dp, vertical = 6.dp)
                                                 .clip(RoundedCornerShape(4.dp))
                                                 .background(Color(0xFF0E7F3B))
+                                                .padding(horizontal = 9.dp, vertical = 6.dp)
                                         ) {
                                             Text(
                                                 modifier = Modifier.align(Alignment.Center),
