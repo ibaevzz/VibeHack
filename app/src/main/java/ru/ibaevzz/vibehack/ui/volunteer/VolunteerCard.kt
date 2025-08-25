@@ -1,4 +1,4 @@
-package ru.ibaevzz.vibehack.ui.wards
+package ru.ibaevzz.vibehack.ui.volunteer
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -24,39 +24,20 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import ru.ibaevzz.vibehack.domain.model.Ward
-
-@Preview
-@Composable
-fun Prev() {
-    WardCard(
-        Ward(
-            id = 0,
-            name = "Sultan",
-            location = "Moscow",
-            phoneNumber = "+79289851280",
-            careerGoals = "repojofpojervopgjer4jrogjeijmvg",
-            skills = listOf("123444", "eropfoperf", "erkvmeokr", "rofjieoirf"),
-            works = listOf(
-                "pewofjcjeopr", "3iefjoier"
-            )
-        ),
-        onClick = {}
-    )
-}
+import ru.ibaevzz.vibehack.domain.model.Volunteer
+import ru.ibaevzz.vibehack.domain.model.VolunteerRequestStatus
 
 @Composable
-fun WardCard(
-    ward: Ward,
+fun VolunteerCard(
+    volunteer: Volunteer,
     onClick: (Int) -> Unit
 ) {
     Card(
         modifier = Modifier
             .clickable(indication = null, interactionSource = null) {
-                onClick(ward.id)
+                onClick(volunteer.id)
             }
             .fillMaxWidth()
             .padding(12.dp),
@@ -88,12 +69,12 @@ fun WardCard(
                     modifier = Modifier.weight(1f)
                 ) {
                     Text(
-                        text = ward.name,
+                        text = volunteer.name,
                         fontWeight = FontWeight.Bold,
                         fontSize = 20.sp
                     )
                     Text(
-                        text = ward.location,
+                        text = volunteer.location,
                         fontSize = 14.sp,
                         color = Color.Gray
                     )
@@ -101,7 +82,7 @@ fun WardCard(
 
                 // График работы
                 Text(
-                    text = "Неполный рабочий день",
+                    text = if (volunteer.status == VolunteerRequestStatus.Approved) "Верифицирован" else "Не верифицирован",
                     fontSize = 12.sp,
                     color = Color.Gray
                 )
@@ -109,27 +90,11 @@ fun WardCard(
 
             Spacer(modifier = Modifier.height(12.dp))
 
-            // Карьерные цели
-            Text("Карьерные цели:", fontWeight = FontWeight.SemiBold)
-            Text(ward.careerGoals, fontSize = 14.sp)
-
-            Spacer(modifier = Modifier.height(12.dp))
-
             // Навыки
             Text("Текущие навыки:", fontWeight = FontWeight.SemiBold)
             FlowRow {
-                ward.skills.forEach { skill ->
+                volunteer.skills.forEach { skill ->
                     SkillChip(skill, Color(0xFF2E7D32))
-                }
-            }
-
-            Spacer(modifier = Modifier.height(12.dp))
-
-            // Желаемая работа
-            Text("Ищет работу как:", fontWeight = FontWeight.SemiBold)
-            FlowRow {
-                ward.works.forEach { work ->
-                    SkillChip(work, Color(0xFF0277BD))
                 }
             }
         }

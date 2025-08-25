@@ -3,13 +3,15 @@ package ru.ibaevzz.vibehack.data.repo
 import ru.ibaevzz.vibehack.domain.model.Task
 import ru.ibaevzz.vibehack.domain.model.Volunteer
 import ru.ibaevzz.vibehack.domain.model.VolunteerDetails
+import ru.ibaevzz.vibehack.domain.model.VolunteerRequestStatus
 import ru.ibaevzz.vibehack.domain.model.Ward
 import ru.ibaevzz.vibehack.domain.repo.VolunteersRepository
 import javax.inject.Inject
+import kotlin.Int
 
 class VolunteersRepositoryImpl @Inject constructor(): VolunteersRepository {
     override suspend fun getVolunteers(): Result<List<Volunteer>> {
-        TODO("Not yet implemented")
+        return Result.success(mockVolunteers)
     }
 
     override suspend fun getVolunteerDetails(id: Int): VolunteerDetails {
@@ -23,6 +25,49 @@ class VolunteersRepositoryImpl @Inject constructor(): VolunteersRepository {
     override suspend fun getWards(): Result<List<Ward>> {
         return Result.success(mockWards)
     }
+
+    private val mockVolunteers = listOf(
+        Volunteer(
+            id = 0,
+            name = "Магомед Шариев",
+            location = "Москва, Россия",
+            phoneNumber = "+79289851280",
+            skills = listOf("123444", "eropfoperf", "erkvmeokr", "rofjieoirf"),
+            status = VolunteerRequestStatus.Rejected,
+        ),
+        Volunteer(
+            id = 0,
+            name = "Магомед Шариев",
+            location = "Москва, Россия",
+            phoneNumber = "+79289851280",
+            skills = listOf("123444", "eropfoperf", "erkvmeokr", "rofjieoirf"),
+            status = VolunteerRequestStatus.Approved,
+        ),
+        Volunteer(
+            id = 0,
+            name = "Магомед Шариев",
+            location = "Москва, Россия",
+            phoneNumber = "+79289851280",
+            skills = listOf("123444", "eropfoperf", "erkvmeokr", "rofjieoirf"),
+            status = VolunteerRequestStatus.Approved,
+        ),
+        Volunteer(
+            id = 0,
+            name = "Магомед Шариев",
+            location = "Москва, Россия",
+            phoneNumber = "+79289851280",
+            skills = listOf("123444", "eropfoperf", "erkvmeokr", "rofjieoirf"),
+            status = VolunteerRequestStatus.Rejected,
+        ),
+        Volunteer(
+            id = 0,
+            name = "Магомед Шариев",
+            location = "Москва, Россия",
+            phoneNumber = "+79289851280",
+            skills = listOf("123444", "eropfoperf", "erkvmeokr", "rofjieoirf"),
+            status = VolunteerRequestStatus.Rejected,
+        )
+    )
 
     private val mockWards = listOf(
         Ward(

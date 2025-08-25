@@ -12,6 +12,7 @@ import ru.ibaevzz.vibehack.ui.family.FamilyViewModel
 import ru.ibaevzz.vibehack.ui.login.LoginViewModel
 import ru.ibaevzz.vibehack.ui.root.RootViewModel
 import ru.ibaevzz.vibehack.ui.tasks.TasksViewModel
+import ru.ibaevzz.vibehack.ui.volunteer.VolunteerViewModel
 import ru.ibaevzz.vibehack.ui.wards.WardsViewModel
 
 @Module
@@ -49,5 +50,10 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(WardsViewModel::class)
     abstract fun bindWardsViewModel(vm: WardsViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(VolunteerViewModel::class)
+    abstract fun bindVolunteerViewModel(vm: VolunteerViewModel): ViewModel
 
 }

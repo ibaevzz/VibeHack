@@ -11,4 +11,6 @@ object Screens {
     fun Registration() = FragmentScreen { LoginFragment() }
     fun TasksFragment() = FragmentScreen { ru.ibaevzz.vibehack.ui.tasks.TasksFragment() }
     fun WardsFragment() = FragmentScreen { ru.ibaevzz.vibehack.ui.wards.WardsFragment() }
+    fun FamilyFragment(id: Int) = FragmentScreen { ru.ibaevzz.vibehack.ui.family.FamilyFragment.newInstance(id) }
+    fun VolonteerFragment() = FragmentScreen { ru.ibaevzz.vibehack.ui.volunteer.VolunteerFragment() }
 }
