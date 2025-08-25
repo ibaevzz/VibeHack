@@ -89,7 +89,7 @@ fun TasksScreen(
         )
         LinearProgressIndicator(
             modifier = Modifier.padding(top = 8.dp).height(10.dp).fillMaxWidth(),
-            progress = { (progress.toFloat()/tasks.size) }
+            progress = { if(tasks.isEmpty()) 0f else progress.toFloat()/tasks.size }
         )
         Spacer(Modifier.height(28.dp))
         LazyColumn {
