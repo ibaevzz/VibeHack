@@ -16,7 +16,7 @@ class AuthInterceptor @Inject constructor(private val userDao: UserDao) : Interc
 
         val requestBuilder = originalRequest.newBuilder()
         token?.let {
-            requestBuilder.addHeader("Authorization", it)
+            requestBuilder.addHeader("Authorization", "Bearer $it")
         }
 
         return chain.proceed(requestBuilder.build())

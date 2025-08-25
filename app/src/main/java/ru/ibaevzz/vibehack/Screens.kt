@@ -9,4 +9,6 @@ object Screens {
         CheckCodeFragment.newInstance(phone)
     }
     fun Registration() = FragmentScreen { LoginFragment() }
+    fun TasksFragment() = FragmentScreen { ru.ibaevzz.vibehack.ui.tasks.TasksFragment() }
+    fun WardsFragment() = FragmentScreen { ru.ibaevzz.vibehack.ui.wards.WardsFragment() }
 }

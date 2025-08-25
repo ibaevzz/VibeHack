@@ -12,8 +12,12 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.github.terrakok.cicerone.Router
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import ru.ibaevzz.vibehack.App
+import ru.ibaevzz.vibehack.Screens
+import ru.ibaevzz.vibehack.domain.model.UserType
 import ru.ibaevzz.vibehack.ui.ViewModelFactory
 import ru.ibaevzz.vibehack.ui.login.LoginScreen
 import javax.inject.Inject
@@ -37,7 +41,14 @@ class CheckCodeFragment: Fragment() {
 
         lifecycleScope.launch {
             viewModel.isCodeValidFlow.collect {
-                if (it) TODO()
+                if (it) withContext(Dispatchers.IO) {
+                    val screen = when (viewModel.getType()) {
+                        UserType.Curator, UserType.Volunteer -> Screens.WardsFragment()
+                        UserType.Ward -> Screens.TasksFragment()
+                        null -> Screens.Registration()
+                    }
+                    router.newRootScreen(screen)
+                }
                 else Toast.makeText(context, "Неверный код", Toast.LENGTH_SHORT)
             }
         }

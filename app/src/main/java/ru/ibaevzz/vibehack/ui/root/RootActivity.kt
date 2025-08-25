@@ -40,12 +40,12 @@ class RootActivity: AppCompatActivity() {
         setContentView(R.layout.activity_root)
 
         lifecycleScope.launch {
-            when (viewModel.userTypeFlow.first()) {
-                UserType.Curator -> TODO()
-                UserType.Ward -> TODO()
-                UserType.Volunteer -> TODO()
-                null -> { router.newRootScreen(Screens.Registration()) }
+            val screen = when (viewModel.userTypeFlow.first()) {
+                UserType.Curator, UserType.Volunteer -> Screens.WardsFragment()
+                UserType.Ward -> Screens.TasksFragment()
+                null -> Screens.Registration()
             }
+            router.newRootScreen(screen)
         }
     }
 

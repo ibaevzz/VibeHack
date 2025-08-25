@@ -1,4 +1,4 @@
-package ru.ibaevzz.vibehack.ui.ward
+package ru.ibaevzz.vibehack.ui.wards
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box

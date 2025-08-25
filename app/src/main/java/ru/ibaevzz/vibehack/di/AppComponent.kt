@@ -11,6 +11,7 @@ import ru.ibaevzz.vibehack.ui.check.CheckCodeFragment
 import ru.ibaevzz.vibehack.ui.family.FamilyFragment
 import ru.ibaevzz.vibehack.ui.login.LoginFragment
 import ru.ibaevzz.vibehack.ui.tasks.TasksFragment
+import ru.ibaevzz.vibehack.ui.wards.WardsFragment
 import javax.inject.Singleton
 
 @Singleton
@@ -28,6 +29,7 @@ interface AppComponent {
     fun inject(fragment: CheckCodeFragment)
     fun inject(fragment: TasksFragment)
     fun inject(fragment: FamilyFragment)
+    fun inject(fragment: WardsFragment)
 
     fun provideNotificationHelper(): NotificationHelper
 

@@ -6,10 +6,12 @@ import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.launch
 import ru.ibaevzz.vibehack.domain.usecase.CheckCodeUseCase
+import ru.ibaevzz.vibehack.domain.usecase.GetTypeUseCase
 import javax.inject.Inject
 
 class CheckCodeViewModel @Inject constructor(
-    private val checkCodeUseCase: CheckCodeUseCase
+    private val checkCodeUseCase: CheckCodeUseCase,
+    private val isAuthUseCase: GetTypeUseCase,
 ): ViewModel() {
 
     private val _isCodeValidFlow = MutableSharedFlow<Boolean>()
@@ -31,5 +33,7 @@ class CheckCodeViewModel @Inject constructor(
             }
         }
     }
+
+    suspend fun getType() = isAuthUseCase()
 
 }
