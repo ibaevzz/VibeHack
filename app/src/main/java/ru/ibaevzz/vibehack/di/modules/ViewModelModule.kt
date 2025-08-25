@@ -8,8 +8,10 @@ import dagger.multibindings.IntoMap
 import ru.ibaevzz.vibehack.di.annotations.ViewModelKey
 import ru.ibaevzz.vibehack.ui.ViewModelFactory
 import ru.ibaevzz.vibehack.ui.check.CheckCodeViewModel
+import ru.ibaevzz.vibehack.ui.family.FamilyViewModel
 import ru.ibaevzz.vibehack.ui.login.LoginViewModel
 import ru.ibaevzz.vibehack.ui.root.RootViewModel
+import ru.ibaevzz.vibehack.ui.tasks.TasksViewModel
 
 @Module
 abstract class ViewModelModule {
@@ -31,5 +33,15 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(CheckCodeViewModel::class)
     abstract fun bindCheckViewModel(vm: CheckCodeViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(FamilyViewModel::class)
+    abstract fun bindFamilyViewModel(vm: FamilyViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(TasksViewModel::class)
+    abstract fun bindTasksViewModel(vm: TasksViewModel): ViewModel
 
 }

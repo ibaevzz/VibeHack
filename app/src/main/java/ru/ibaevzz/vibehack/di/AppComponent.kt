@@ -8,7 +8,9 @@ import ru.ibaevzz.vibehack.di.modules.*
 import ru.ibaevzz.vibehack.di.annotations.UseMockApi
 import ru.ibaevzz.vibehack.notification.NotificationHelper
 import ru.ibaevzz.vibehack.ui.check.CheckCodeFragment
+import ru.ibaevzz.vibehack.ui.family.FamilyFragment
 import ru.ibaevzz.vibehack.ui.login.LoginFragment
+import ru.ibaevzz.vibehack.ui.tasks.TasksFragment
 import javax.inject.Singleton
 
 @Singleton
@@ -24,6 +26,8 @@ interface AppComponent {
     fun inject(activity: RootActivity)
     fun inject(fragment: LoginFragment)
     fun inject(fragment: CheckCodeFragment)
+    fun inject(fragment: TasksFragment)
+    fun inject(fragment: FamilyFragment)
 
     fun provideNotificationHelper(): NotificationHelper
 
